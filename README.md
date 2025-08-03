@@ -29,14 +29,14 @@ Midnight Moss is a carefully crafted dark theme that brings together the deep tr
 
 ### ✅ Currently Available
 - [Obsidian](#obsidian) - Note-taking and knowledge management
+- [VS Code](#vs-code) - Code editor
+- [iTerm2](#iterm2) - Terminal emulator
+- [Neovim](#neovim) - Text editor
+- [Kitty](#kitty) - Terminal emulator
 - [Starship](#starship) - Cross-shell prompt
 - [Zellij](#zellij) - Terminal multiplexer
 
 ### 🔄 Coming Soon
-- VS Code - Code editor
-- iTerm2 - Terminal emulator
-- Neovim - Text editor
-- Kitty - Terminal emulator
 - Alacritty - Terminal emulator
 - Hyper - Terminal emulator
 - Sublime Text - Text editor
@@ -52,6 +52,18 @@ Midnight Moss is a carefully crafted dark theme that brings together the deep tr
 2. Copy the contents to your vault's `.obsidian/themes/midnight-moss/` directory
 3. Go to Settings → Appearance → Themes
 4. Select "Midnight Moss" from the dropdown
+
+### VS Code
+
+1. Download `vscode/midnight-moss-theme.json`
+2. Install manually or create a custom extension
+3. See the [VS Code README](vscode/README.md) for detailed instructions
+
+### iTerm2
+
+1. Download `iterm2/Midnight Moss.itermcolors`
+2. Double-click to import into iTerm2
+3. Go to Preferences → Profiles → Colors → Color Presets
 
 ### Starship
 
