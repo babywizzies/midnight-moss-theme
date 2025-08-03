@@ -1,0 +1,439 @@
+/*
+ * Midnight Moss userContent.css for Firefox
+ * Styles internal Firefox pages (about: pages, new tab, etc.)
+ * 
+ * Installation:
+ * 1. Copy this file to chrome/userContent.css (same folder as userChrome.css)
+ * 2. Restart Firefox
+ */
+
+@-moz-document url-prefix("about:") {
+  /* === ROOT VARIABLES === */
+  :root {
+    /* Midnight Moss Color Palette */
+    --midnight-bg-primary: #1c1c1c !important;
+    --midnight-bg-secondary: #262626 !important;
+    --midnight-bg-tertiary: #2e2e2e !important;
+    --midnight-bg-highlight: #3a3a3a !important;
+    --midnight-bg-border: #464646 !important;
+    --midnight-bg-subtle: #525252 !important;
+    
+    --midnight-fg-primary: #b8b8b8 !important;
+    --midnight-fg-bright: #c8c8c8 !important;
+    --midnight-fg-muted: #7a7a7a !important;
+    
+    --midnight-moss: #5e8d87 !important;
+    --midnight-forest: #6e8f7c !important;
+    --midnight-ocean: #5d7e97 !important;
+    --midnight-wine: #9b6a6c !important;
+    --midnight-sage: #826d94 !important;
+    --midnight-amber: #a09262 !important;
+    --midnight-copper: #9d7a5a !important;
+  }
+
+  /* === UNIVERSAL STYLES === */
+  * {
+    scrollbar-width: thin !important;
+    scrollbar-color: var(--midnight-bg-border) var(--midnight-bg-secondary) !important;
+  }
+
+  body,
+  html {
+    background-color: var(--midnight-bg-primary) !important;
+    color: var(--midnight-fg-primary) !important;
+  }
+
+  /* Links */
+  a {
+    color: var(--midnight-moss) !important;
+  }
+
+  a:hover {
+    color: var(--midnight-forest) !important;
+  }
+
+  a:visited {
+    color: var(--midnight-sage) !important;
+  }
+
+  /* Headers */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--midnight-fg-bright) !important;
+  }
+
+  /* Form elements */
+  input[type="text"],
+  input[type="search"],
+  input[type="url"],
+  textarea,
+  select {
+    background-color: var(--midnight-bg-tertiary) !important;
+    border: 1px solid var(--midnight-bg-border) !important;
+    color: var(--midnight-fg-primary) !important;
+    border-radius: 4px !important;
+  }
+
+  input[type="text"]:focus,
+  input[type="search"]:focus,
+  input[type="url"]:focus,
+  textarea:focus,
+  select:focus {
+    border-color: var(--midnight-moss) !important;
+    box-shadow: 0 0 0 2px rgba(94, 141, 135, 0.2) !important;
+  }
+
+  button {
+    background-color: var(--midnight-bg-tertiary) !important;
+    border: 1px solid var(--midnight-bg-border) !important;
+    color: var(--midnight-fg-primary) !important;
+    border-radius: 4px !important;
+  }
+
+  button:hover {
+    background-color: var(--midnight-moss) !important;
+    color: var(--midnight-bg-primary) !important;
+  }
+
+  button:disabled {
+    background-color: var(--midnight-bg-secondary) !important;
+    color: var(--midnight-fg-muted) !important;
+  }
+}
+
+/* === ABOUT:BLANK === */
+@-moz-document url("about:blank") {
+  html {
+    background-color: var(--midnight-bg-primary) !important;
+  }
+}
+
+/* === NEW TAB PAGE === */
+@-moz-document url("about:newtab"), url("about:home") {
+  body {
+    background: linear-gradient(135deg, var(--midnight-bg-primary) 0%, var(--midnight-bg-secondary) 100%) !important;
+  }
+
+  /* Search box */
+  .search-wrapper input {
+    background-color: var(--midnight-bg-tertiary) !important;
+    border: 1px solid var(--midnight-bg-border) !important;
+    color: var(--midnight-fg-primary) !important;
+  }
+
+  .search-wrapper input:focus {
+    border-color: var(--midnight-moss) !important;
+    box-shadow: 0 0 0 2px rgba(94, 141, 135, 0.2) !important;
+  }
+
+  /* Top sites */
+  .top-site-outer {
+    background-color: var(--midnight-bg-tertiary) !important;
+    border-radius: 8px !important;
+  }
+
+  .top-site-outer:hover {
+    background-color: var(--midnight-bg-highlight) !important;
+  }
+
+  .top-site-inner > a {
+    color: var(--midnight-fg-primary) !important;
+  }
+
+  /* Pocket recommendations */
+  .ds-card {
+    background-color: var(--midnight-bg-tertiary) !important;
+    border: 1px solid var(--midnight-bg-border) !important;
+  }
+
+  .ds-card:hover {
+    background-color: var(--midnight-bg-highlight) !important;
+  }
+}
+
+/* === ABOUT:PREFERENCES === */
+@-moz-document url-prefix("about:preferences") {
+  /* Main content area */
+  #mainPrefPane {
+    background-color: var(--midnight-bg-primary) !important;
+  }
+
+  /* Category list */
+  #categories {
+    background-color: var(--midnight-bg-secondary) !important;
+    border-right: 1px solid var(--midnight-bg-border) !important;
+  }
+
+  .category {
+    color: var(--midnight-fg-primary) !important;
+  }
+
+  .category:hover {
+    background-color: var(--midnight-bg-highlight) !important;
+  }
+
+  .category[selected] {
+    background-color: var(--midnight-moss) !important;
+    color: var(--midnight-bg-primary) !important;
+  }
+
+  /* Preference sections */
+  groupbox {
+    background-color: var(--midnight-bg-tertiary) !important;
+    border: 1px solid var(--midnight-bg-border) !important;
+    border-radius: 6px !important;
+  }
+
+  caption {
+    color: var(--midnight-fg-bright) !important;
+  }
+
+  /* Checkboxes and radio buttons */
+  checkbox {
+    color: var(--midnight-fg-primary) !important;
+  }
+
+  radio {
+    color: var(--midnight-fg-primary) !important;
+  }
+
+  /* Tabs */
+  .tab {
+    background-color: var(--midnight-bg-tertiary) !important;
+    border: 1px solid var(--midnight-bg-border) !important;
+    color: var(--midnight-fg-primary) !important;
+  }
+
+  .tab:hover {
+    background-color: var(--midnight-bg-highlight) !important;
+  }
+
+  .tab[selected] {
+    background-color: var(--midnight-moss) !important;
+    color: var(--midnight-bg-primary) !important;
+  }
+}
+
+/* === ABOUT:ADDONS === */
+@-moz-document url-prefix("about:addons") {
+  /* Main background */
+  html {
+    background-color: var(--midnight-bg-primary) !important;
+  }
+
+  /* Category list */
+  .categories {
+    background-color: var(--midnight-bg-secondary) !important;
+  }
+
+  .category {
+    color: var(--midnight-fg-primary) !important;
+  }
+
+  .category:hover {
+    background-color: var(--midnight-bg-highlight) !important;
+  }
+
+  .category[selected] {
+    background-color: var(--midnight-moss) !important;
+    color: var(--midnight-bg-primary) !important;
+  }
+
+  /* Addon cards */
+  .addon {
+    background-color: var(--midnight-bg-tertiary) !important;
+    border: 1px solid var(--midnight-bg-border) !important;
+    border-radius: 6px !important;
+  }
+
+  .addon:hover {
+    background-color: var(--midnight-bg-highlight) !important;
+  }
+
+  .addon-name {
+    color: var(--midnight-fg-bright) !important;
+  }
+
+  .addon-description {
+    color: var(--midnight-fg-primary) !important;
+  }
+
+  /* Enable/disable buttons */
+  .enable-button {
+    background-color: var(--midnight-forest) !important;
+    border-color: var(--midnight-forest) !important;
+    color: var(--midnight-bg-primary) !important;
+  }
+
+  .disable-button {
+    background-color: var(--midnight-wine) !important;
+    border-color: var(--midnight-wine) !important;
+    color: var(--midnight-bg-primary) !important;
+  }
+}
+
+/* === ABOUT:SUPPORT === */
+@-moz-document url("about:support") {
+  /* Section headers */
+  .section-header {
+    background-color: var(--midnight-bg-tertiary) !important;
+    color: var(--midnight-fg-bright) !important;
+    border-bottom: 2px solid var(--midnight-moss) !important;
+  }
+
+  /* Tables */
+  table {
+    background-color: var(--midnight-bg-tertiary) !important;
+    border: 1px solid var(--midnight-bg-border) !important;
+  }
+
+  th {
+    background-color: var(--midnight-bg-secondary) !important;
+    color: var(--midnight-fg-bright) !important;
+    border-bottom: 1px solid var(--midnight-bg-border) !important;
+  }
+
+  td {
+    color: var(--midnight-fg-primary) !important;
+    border-bottom: 1px solid var(--midnight-bg-border) !important;
+  }
+
+  tr:hover {
+    background-color: var(--midnight-bg-highlight) !important;
+  }
+}
+
+/* === ABOUT:CONFIG === */
+@-moz-document url("about:config") {
+  /* Search box */
+  #about-config-search {
+    background-color: var(--midnight-bg-tertiary) !important;
+    border: 1px solid var(--midnight-bg-border) !important;
+    color: var(--midnight-fg-primary) !important;
+  }
+
+  #about-config-search:focus {
+    border-color: var(--midnight-moss) !important;
+    box-shadow: 0 0 0 2px rgba(94, 141, 135, 0.2) !important;
+  }
+
+  /* Preference rows */
+  .config-table-row {
+    background-color: var(--midnight-bg-tertiary) !important;
+    border-bottom: 1px solid var(--midnight-bg-border) !important;
+  }
+
+  .config-table-row:hover {
+    background-color: var(--midnight-bg-highlight) !important;
+  }
+
+  /* Modified preferences */
+  .config-table-row[data-changed] {
+    background-color: rgba(94, 141, 135, 0.1) !important;
+  }
+
+  /* Preference names and values */
+  .config-table-row td {
+    color: var(--midnight-fg-primary) !important;
+  }
+
+  /* Boolean values */
+  .config-table-row[data-type="boolean"] .config-table-value {
+    color: var(--midnight-amber) !important;
+  }
+
+  /* Number values */
+  .config-table-row[data-type="number"] .config-table-value {
+    color: var(--midnight-copper) !important;
+  }
+
+  /* String values */
+  .config-table-row[data-type="string"] .config-table-value {
+    color: var(--midnight-ocean) !important;
+  }
+}
+
+/* === DEVELOPER TOOLS === */
+@-moz-document url-prefix("about:devtools") {
+  body {
+    background-color: var(--midnight-bg-primary) !important;
+    color: var(--midnight-fg-primary) !important;
+  }
+
+  /* Tool cards */
+  .devtools-card {
+    background-color: var(--midnight-bg-tertiary) !important;
+    border: 1px solid var(--midnight-bg-border) !important;
+    border-radius: 6px !important;
+  }
+
+  .devtools-card:hover {
+    background-color: var(--midnight-bg-highlight) !important;
+  }
+
+  .devtools-card-title {
+    color: var(--midnight-fg-bright) !important;
+  }
+
+  .devtools-card-description {
+    color: var(--midnight-fg-primary) !important;
+  }
+}
+
+/* === ERROR PAGES === */
+@-moz-document url-prefix("about:neterror"),
+               url-prefix("about:certerror"),
+               url-prefix("about:blocked") {
+  
+  body {
+    background: linear-gradient(135deg, var(--midnight-bg-primary) 0%, var(--midnight-bg-secondary) 100%) !important;
+  }
+
+  /* Error title */
+  h1 {
+    color: var(--midnight-wine) !important;
+  }
+
+  /* Error description */
+  .error-code {
+    color: var(--midnight-fg-muted) !important;
+  }
+
+  /* Try again button */
+  .primary-button {
+    background-color: var(--midnight-moss) !important;
+    border-color: var(--midnight-moss) !important;
+    color: var(--midnight-bg-primary) !important;
+  }
+
+  .primary-button:hover {
+    background-color: var(--midnight-forest) !important;
+  }
+
+  /* Advanced button */
+  .secondary-button {
+    background-color: var(--midnight-bg-tertiary) !important;
+    border-color: var(--midnight-bg-border) !important;
+    color: var(--midnight-fg-primary) !important;
+  }
+
+  .secondary-button:hover {
+    background-color: var(--midnight-bg-highlight) !important;
+  }
+}
+
+/* === PRIVATE BROWSING === */
+@-moz-document url("about:privatebrowsing") {
+  body {
+    background: linear-gradient(135deg, var(--midnight-bg-primary) 0%, var(--midnight-sage) 20%, var(--midnight-bg-secondary) 100%) !important;
+  }
+
+  .private-browsing-promo {
+    background-color: rgba(130, 109, 148, 0.1) !important;
+    border: 1px solid var(--midnight-sage) !important;
+    border-radius: 8px !important;
+  }
+
+  .private-browsing-promo h2 {
+    color: var(--midnight-sage) !important;
+  }
+}

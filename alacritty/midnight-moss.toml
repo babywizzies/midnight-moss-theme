@@ -1,0 +1,152 @@
+# Midnight Moss theme for Alacritty
+# Dark organic palette with mossy green-teal accents
+# 
+# Usage:
+# 1. Copy this file to ~/.config/alacritty/themes/midnight-moss.toml
+# 2. In your alacritty.toml, add: import = ["~/.config/alacritty/themes/midnight-moss.toml"]
+# 
+# Or merge these colors directly into your main alacritty.toml file
+
+[colors]
+
+[colors.primary]
+background = "#1c1c1c" # Deep Night - primary background
+foreground = "#b8b8b8" # Moonlight - primary text
+
+# Bright and dim foreground colors
+dim_foreground = "#7a7a7a" # Mist - dimmed text
+bright_foreground = "#c8c8c8" # Silver - bright text
+
+[colors.cursor]
+text = "#1c1c1c" # Deep Night - cursor text (inverted)
+cursor = "#5e8d87" # Moss - cursor color
+
+[colors.vi_mode_cursor]
+text = "#1c1c1c" # Deep Night
+cursor = "#826d94" # Sage - vi mode cursor
+
+[colors.search]
+# Search bar colors
+[colors.search.matches]
+foreground = "#1c1c1c" # Deep Night
+background = "#a09262" # Amber - search matches
+
+[colors.search.focused_match]
+foreground = "#1c1c1c" # Deep Night  
+background = "#5e8d87" # Moss - focused search match
+
+[colors.search.footer_bar]
+foreground = "#b8b8b8" # Moonlight
+background = "#2e2e2e" # Charcoal
+
+[colors.hints]
+# URL/hint colors
+[colors.hints.start]
+foreground = "#1c1c1c" # Deep Night
+background = "#a09262" # Amber
+
+[colors.hints.end]
+foreground = "#1c1c1c" # Deep Night
+background = "#5e8d87" # Moss
+
+[colors.line_indicator]
+foreground = "None"
+background = "None"
+
+[colors.footer_bar]
+foreground = "#b8b8b8" # Moonlight
+background = "#2e2e2e" # Charcoal
+
+[colors.selection]
+text = "#c8c8c8" # Silver - selected text
+background = "#5e8d87" # Moss - selection background (with alpha)
+
+# Normal colors (0-7)
+[colors.normal]
+black = "#1c1c1c"   # Deep Night
+red = "#9b6a6c"     # Wine
+green = "#6e8f7c"   # Forest
+yellow = "#a09262"  # Amber
+blue = "#5d7e97"    # Ocean
+magenta = "#826d94" # Sage
+cyan = "#5e8d87"    # Moss
+white = "#b8b8b8"   # Moonlight
+
+# Bright colors (8-15)
+[colors.bright]
+black = "#525252"   # Ash - bright black (dark gray)
+red = "#a37174"     # Bright Wine
+green = "#7a9e8c"   # Bright Forest
+yellow = "#afa072"  # Bright Amber
+blue = "#6d8ca7"    # Bright Ocean
+magenta = "#927ba4" # Bright Sage
+cyan = "#6e9b95"    # Bright Moss
+white = "#c8c8c8"   # Silver - bright white
+
+# Dim colors (optional - used when dim_foreground is enabled)
+[colors.dim]
+black = "#262626"   # Shadow
+red = "#7a5356"     # Dim Wine
+green = "#546b60"   # Dim Forest
+yellow = "#806e4a"  # Dim Amber
+blue = "#475e73"    # Dim Ocean
+magenta = "#615270" # Dim Sage
+cyan = "#46665f"    # Dim Moss
+white = "#7a7a7a"   # Mist
+
+# Indexed colors for extended palette (optional)
+[[colors.indexed_colors]]
+index = 16
+color = "#9d7a5a" # Copper
+
+[[colors.indexed_colors]]
+index = 17
+color = "#464646" # Stone
+
+[[colors.indexed_colors]]
+index = 18
+color = "#262626" # Shadow
+
+[[colors.indexed_colors]]
+index = 19
+color = "#2e2e2e" # Charcoal
+
+[[colors.indexed_colors]]
+index = 20
+color = "#3a3a3a" # Slate
+
+[[colors.indexed_colors]]
+index = 21
+color = "#464646" # Stone
+
+# Terminal bell colors
+[colors.bell]
+animation = "EaseOutExpo"
+duration = 0
+color = "#a09262" # Amber - bell color
+
+# Background opacity (optional - uncomment to use)
+# [window]
+# opacity = 0.95
+
+# Font configuration (optional - pairs well with the theme)
+# [font]
+# size = 14.0
+# 
+# [font.normal]
+# family = "JetBrains Mono"
+# style = "Regular"
+# 
+# [font.bold]
+# family = "JetBrains Mono"
+# style = "Bold"
+# 
+# [font.italic]
+# family = "JetBrains Mono"
+# style = "Italic"
+
+# Cursor styling (optional)
+# [cursor]
+# style = "Block"
+# blinking = "Off"
+# blink_interval = 750

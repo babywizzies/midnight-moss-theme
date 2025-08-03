@@ -1,0 +1,25 @@
+pkgbase = midnight-moss-themes
+	pkgdesc = Dark organic theme collection with moss-inspired accents for multiple applications
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = https://github.com/babywizzies/midnight-moss-theme
+	arch = any
+	license = MIT
+	optdepends = alacritty: Terminal emulator theme support
+	optdepends = firefox: Browser interface theming
+	optdepends = kitty: Terminal emulator theme support
+	optdepends = neovim: Text editor colorscheme
+	optdepends = obsidian: Note-taking app theme
+	optdepends = starship: Cross-shell prompt theme
+	optdepends = sublime-text-4: Text editor theme
+	optdepends = tmux: Terminal multiplexer theme
+	optdepends = vim: Text editor colorscheme
+	optdepends = visual-studio-code-bin: Code editor theme
+	optdepends = zsh: Shell theme support
+	optdepends = oh-my-zsh-git: Zsh framework theme support
+	provides = midnight-moss-themes
+	conflicts = midnight-moss-themes-git
+	source = midnight-moss-themes-1.0.0.tar.gz::https://github.com/babywizzies/midnight-moss-theme/archive/v1.0.0.tar.gz
+	sha256sums = SKIP
+
+pkgname = midnight-moss-themes

@@ -1,0 +1,198 @@
+# Maintainer: Midnight Moss Theme Project
+# Contributor: Your Name <your.email@example.com>
+
+pkgname=midnight-moss-themes
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Dark organic theme collection with moss-inspired accents for multiple applications"
+arch=('any')
+url="https://github.com/babywizzies/midnight-moss-theme"
+license=('MIT')
+depends=()
+optdepends=(
+    'alacritty: Terminal emulator theme support'
+    'firefox: Browser interface theming'
+    'kitty: Terminal emulator theme support'
+    'neovim: Text editor colorscheme'
+    'obsidian: Note-taking app theme'
+    'starship: Cross-shell prompt theme'
+    'sublime-text-4: Text editor theme'
+    'tmux: Terminal multiplexer theme'
+    'vim: Text editor colorscheme'
+    'visual-studio-code-bin: Code editor theme'
+    'zsh: Shell theme support'
+    'oh-my-zsh-git: Zsh framework theme support'
+)
+provides=("${pkgname}")
+conflicts=("${pkgname}-git")
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz")
+sha256sums=('SKIP')  # Will be updated when creating actual release
+
+package() {
+    cd "${srcdir}/midnight-moss-theme-${pkgver}"
+    
+    # Create base directories
+    install -d "${pkgdir}/usr/share/themes/midnight-moss"
+    install -d "${pkgdir}/usr/share/doc/midnight-moss"
+    install -d "${pkgdir}/usr/share/licenses/midnight-moss"
+    
+    # Install license
+    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/midnight-moss/LICENSE"
+    
+    # Install main documentation
+    install -Dm644 README.md "${pkgdir}/usr/share/doc/midnight-moss/README.md"
+    install -Dm644 CONTRIBUTING.md "${pkgdir}/usr/share/doc/midnight-moss/CONTRIBUTING.md"
+    
+    # === ALACRITTY ===
+    install -d "${pkgdir}/usr/share/themes/midnight-moss/alacritty"
+    install -Dm644 alacritty/midnight-moss.toml \
+        "${pkgdir}/usr/share/themes/midnight-moss/alacritty/midnight-moss.toml"
+    install -Dm644 alacritty/midnight-moss.yml \
+        "${pkgdir}/usr/share/themes/midnight-moss/alacritty/midnight-moss.yml"
+    install -Dm644 alacritty/README.md \
+        "${pkgdir}/usr/share/doc/midnight-moss/alacritty-README.md"
+    
+    # === FIREFOX ===
+    install -d "${pkgdir}/usr/share/themes/midnight-moss/firefox"
+    install -Dm644 firefox/userChrome.css \
+        "${pkgdir}/usr/share/themes/midnight-moss/firefox/userChrome.css"
+    install -Dm644 firefox/userContent.css \
+        "${pkgdir}/usr/share/themes/midnight-moss/firefox/userContent.css"
+    install -Dm644 firefox/README.md \
+        "${pkgdir}/usr/share/doc/midnight-moss/firefox-README.md"
+    
+    # === ITERM2 ===
+    install -d "${pkgdir}/usr/share/themes/midnight-moss/iterm2"
+    install -Dm644 "iterm2/Midnight Moss.itermcolors" \
+        "${pkgdir}/usr/share/themes/midnight-moss/iterm2/Midnight Moss.itermcolors"
+    install -Dm644 iterm2/README.md \
+        "${pkgdir}/usr/share/doc/midnight-moss/iterm2-README.md"
+    
+    # === JETBRAINS ===
+    install -d "${pkgdir}/usr/share/themes/midnight-moss/jetbrains"
+    install -Dm644 jetbrains/Midnight_Moss.icls \
+        "${pkgdir}/usr/share/themes/midnight-moss/jetbrains/Midnight_Moss.icls"
+    install -Dm644 jetbrains/README.md \
+        "${pkgdir}/usr/share/doc/midnight-moss/jetbrains-README.md"
+    
+    # === KITTY ===
+    install -d "${pkgdir}/usr/share/themes/midnight-moss/kitty"
+    install -Dm644 kitty/midnight-moss.conf \
+        "${pkgdir}/usr/share/themes/midnight-moss/kitty/midnight-moss.conf"
+    
+    # === NEOVIM ===
+    install -d "${pkgdir}/usr/share/themes/midnight-moss/neovim"
+    install -Dm644 neovim/midnight-moss.lua \
+        "${pkgdir}/usr/share/themes/midnight-moss/neovim/midnight-moss.lua"
+    
+    # === OBSIDIAN ===
+    install -d "${pkgdir}/usr/share/themes/midnight-moss/obsidian"
+    install -Dm644 obsidian/theme.css \
+        "${pkgdir}/usr/share/themes/midnight-moss/obsidian/theme.css"
+    install -Dm644 obsidian/manifest.json \
+        "${pkgdir}/usr/share/themes/midnight-moss/obsidian/manifest.json"
+    install -Dm644 obsidian/README.md \
+        "${pkgdir}/usr/share/doc/midnight-moss/obsidian-README.md"
+    
+    # === STARSHIP ===
+    install -d "${pkgdir}/usr/share/themes/midnight-moss/starship"
+    install -Dm644 starship/starship.toml \
+        "${pkgdir}/usr/share/themes/midnight-moss/starship/starship.toml"
+    
+    # === SUBLIME TEXT ===
+    install -d "${pkgdir}/usr/share/themes/midnight-moss/sublime-text"
+    install -Dm644 "sublime-text/Midnight Moss.sublime-color-scheme" \
+        "${pkgdir}/usr/share/themes/midnight-moss/sublime-text/Midnight Moss.sublime-color-scheme"
+    install -Dm644 sublime-text/README.md \
+        "${pkgdir}/usr/share/doc/midnight-moss/sublime-text-README.md"
+    
+    # === TMUX ===
+    install -d "${pkgdir}/usr/share/themes/midnight-moss/tmux"
+    install -Dm644 tmux/midnight-moss.conf \
+        "${pkgdir}/usr/share/themes/midnight-moss/tmux/midnight-moss.conf"
+    install -Dm644 tmux/README.md \
+        "${pkgdir}/usr/share/doc/midnight-moss/tmux-README.md"
+    
+    # === VIM ===
+    install -d "${pkgdir}/usr/share/themes/midnight-moss/vim"
+    install -Dm644 vim/midnight-moss.vim \
+        "${pkgdir}/usr/share/themes/midnight-moss/vim/midnight-moss.vim"
+    install -Dm644 vim/README.md \
+        "${pkgdir}/usr/share/doc/midnight-moss/vim-README.md"
+    
+    # === VSCODE ===
+    install -d "${pkgdir}/usr/share/themes/midnight-moss/vscode"
+    install -Dm644 vscode/midnight-moss-theme.json \
+        "${pkgdir}/usr/share/themes/midnight-moss/vscode/midnight-moss-theme.json"
+    install -Dm644 vscode/README.md \
+        "${pkgdir}/usr/share/doc/midnight-moss/vscode-README.md"
+    
+    # === ZELLIJ ===
+    install -d "${pkgdir}/usr/share/themes/midnight-moss/zellij"
+    install -Dm644 zellij/config.kdl \
+        "${pkgdir}/usr/share/themes/midnight-moss/zellij/config.kdl"
+    
+    # === ZSH ===
+    install -d "${pkgdir}/usr/share/themes/midnight-moss/zsh"
+    install -Dm644 zsh/midnight-moss.zsh-theme \
+        "${pkgdir}/usr/share/themes/midnight-moss/zsh/midnight-moss.zsh-theme"
+    install -Dm644 zsh/README.md \
+        "${pkgdir}/usr/share/doc/midnight-moss/zsh-README.md"
+}
+
+# Post-install message
+post_install() {
+    echo ""
+    echo "==> Midnight Moss Themes installed successfully! 🌿"
+    echo ""
+    echo "Theme files are located in: /usr/share/themes/midnight-moss/"
+    echo "Documentation available in: /usr/share/doc/midnight-moss/"
+    echo ""
+    echo "Quick setup for common applications:"
+    echo ""
+    echo "• Alacritty:"
+    echo "  cp /usr/share/themes/midnight-moss/alacritty/midnight-moss.toml ~/.config/alacritty/themes/"
+    echo "  Add 'import = [\"~/.config/alacritty/themes/midnight-moss.toml\"]' to alacritty.toml"
+    echo ""
+    echo "• Firefox:"
+    echo "  1. Enable custom stylesheets: about:config -> toolkit.legacyUserProfileCustomizations.stylesheets -> true"
+    echo "  2. Create chrome folder in profile directory"
+    echo "  3. cp /usr/share/themes/midnight-moss/firefox/* ~/.mozilla/firefox/*/chrome/"
+    echo ""
+    echo "• Kitty:"
+    echo "  echo 'include /usr/share/themes/midnight-moss/kitty/midnight-moss.conf' >> ~/.config/kitty/kitty.conf"
+    echo ""
+    echo "• Vim/Neovim:"
+    echo "  mkdir -p ~/.vim/colors && cp /usr/share/themes/midnight-moss/vim/midnight-moss.vim ~/.vim/colors/"
+    echo "  Add 'colorscheme midnight-moss' to your .vimrc"
+    echo ""
+    echo "• tmux:"
+    echo "  echo 'source-file /usr/share/themes/midnight-moss/tmux/midnight-moss.conf' >> ~/.tmux.conf"
+    echo ""
+    echo "• Zsh (Oh-My-Zsh):"
+    echo "  cp /usr/share/themes/midnight-moss/zsh/midnight-moss.zsh-theme ~/.oh-my-zsh/themes/"
+    echo "  Set ZSH_THEME=\"midnight-moss\" in ~/.zshrc"
+    echo ""
+    echo "For detailed installation instructions, see:"
+    echo "/usr/share/doc/midnight-moss/<application>-README.md"
+    echo ""
+}
+
+post_upgrade() {
+    post_install
+}
+
+post_remove() {
+    echo ""
+    echo "==> Midnight Moss Themes removed"
+    echo ""
+    echo "Note: User configuration files were not removed."
+    echo "You may want to manually clean up theme references in:"
+    echo "• ~/.config/alacritty/alacritty.toml"
+    echo "• ~/.config/kitty/kitty.conf"
+    echo "• ~/.tmux.conf"
+    echo "• ~/.vimrc or ~/.config/nvim/init.vim"
+    echo "• ~/.zshrc"
+    echo "• Firefox profile chrome folder"
+    echo ""
+}

@@ -1,0 +1,346 @@
+{
+    "name": "Midnight Moss",
+    "author": "Midnight Moss Theme",
+    "variables": {
+        "bg_primary": "#1c1c1c",
+        "bg_secondary": "#262626", 
+        "bg_tertiary": "#2e2e2e",
+        "bg_highlight": "#3a3a3a",
+        "bg_border": "#464646",
+        "bg_subtle": "#525252",
+        
+        "fg_primary": "#b8b8b8",
+        "fg_bright": "#c8c8c8", 
+        "fg_muted": "#7a7a7a",
+        
+        "moss": "#5e8d87",
+        "forest": "#6e8f7c",
+        "ocean": "#5d7e97",
+        "wine": "#9b6a6c",
+        "sage": "#826d94",
+        "amber": "#a09262",
+        "copper": "#9d7a5a"
+    },
+    "globals": {
+        "background": "var(bg_primary)",
+        "foreground": "var(fg_primary)",
+        "caret": "var(moss)",
+        "line_highlight": "var(bg_secondary)",
+        "selection": "color(var(moss) alpha(0.2))",
+        "selection_foreground": "var(fg_bright)",
+        "inactive_selection": "color(var(bg_highlight) alpha(0.5))",
+        "selection_border": "var(moss)",
+        "misspelling": "var(wine)",
+        "shadow": "color(var(bg_primary) alpha(0.8))",
+        
+        "find_highlight": "color(var(amber) alpha(0.3))",
+        "find_highlight_foreground": "var(fg_bright)",
+        
+        "guide": "var(bg_highlight)",
+        "active_guide": "var(bg_border)",
+        "stack_guide": "var(bg_border)",
+        
+        "highlight": "var(moss)",
+        "brackets_options": "underline",
+        "brackets_foreground": "var(moss)",
+        "bracket_contents_options": "underline",
+        "bracket_contents_foreground": "var(moss)",
+        
+        "tags_options": "stippled_underline",
+        "tags_foreground": "var(wine)",
+        
+        "gutter": "var(bg_secondary)",
+        "gutter_foreground": "var(bg_subtle)",
+        "gutter_foreground_highlight": "var(fg_muted)",
+        
+        "line_diff_width": "2",
+        "line_diff_added": "var(forest)",
+        "line_diff_modified": "var(amber)",
+        "line_diff_deleted": "var(wine)",
+        
+        "scroll_highlight": "var(moss)",
+        "scroll_selected_highlight": "var(forest)",
+        
+        "rulers": "var(bg_border)",
+        
+        "accent": "var(moss)",
+        
+        "popup_css": "html { background-color: var(--background); color: var(--foreground); } a { color: var(--bluish); } .error { color: var(--redish); } .warning { color: var(--yellowish); } .success { color: var(--greenish); }",
+        
+        "sheet_css": "html { background-color: var(--background); color: var(--foreground); } a { color: var(--bluish); }"
+    },
+    "rules": [
+        {
+            "name": "Comments",
+            "scope": "comment, punctuation.definition.comment",
+            "foreground": "var(fg_muted)",
+            "font_style": "italic"
+        },
+        {
+            "name": "Strings",
+            "scope": "string",
+            "foreground": "var(amber)"
+        },
+        {
+            "name": "String punctuation",
+            "scope": "punctuation.definition.string",
+            "foreground": "var(amber)"
+        },
+        {
+            "name": "Numbers",
+            "scope": "constant.numeric",
+            "foreground": "var(copper)"
+        },
+        {
+            "name": "Built-in constants",
+            "scope": "constant.language",
+            "foreground": "var(copper)",
+            "font_style": "bold"
+        },
+        {
+            "name": "User-defined constants",
+            "scope": "constant.character, constant.other",
+            "foreground": "var(copper)"
+        },
+        {
+            "name": "Keywords",
+            "scope": "keyword",
+            "foreground": "var(sage)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Storage",
+            "scope": "storage",
+            "foreground": "var(sage)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Storage type",
+            "scope": "storage.type",
+            "foreground": "var(sage)"
+        },
+        {
+            "name": "Functions",
+            "scope": "entity.name.function",
+            "foreground": "var(ocean)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Function calls",
+            "scope": "support.function, variable.function",
+            "foreground": "var(ocean)"
+        },
+        {
+            "name": "Classes",
+            "scope": "entity.name.class, entity.name.type.class",
+            "foreground": "var(forest)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Class inheritance",
+            "scope": "entity.other.inherited-class",
+            "foreground": "var(forest)",
+            "font_style": "italic"
+        },
+        {
+            "name": "Variables",
+            "scope": "variable",
+            "foreground": "var(fg_primary)"
+        },
+        {
+            "name": "Variable parameters",
+            "scope": "variable.parameter",
+            "foreground": "var(fg_bright)",
+            "font_style": "italic"
+        },
+        {
+            "name": "Instance variables",
+            "scope": "variable.other.member",
+            "foreground": "var(fg_primary)"
+        },
+        {
+            "name": "Language variables",
+            "scope": "variable.language",
+            "foreground": "var(sage)"
+        },
+        {
+            "name": "Library classes/types",
+            "scope": "support.type, support.class",
+            "foreground": "var(forest)"
+        },
+        {
+            "name": "Library constants",
+            "scope": "support.constant",
+            "foreground": "var(copper)"
+        },
+        {
+            "name": "Invalid",
+            "scope": "invalid",
+            "foreground": "var(wine)",
+            "background": "color(var(wine) alpha(0.1))"
+        },
+        {
+            "name": "Invalid deprecated",
+            "scope": "invalid.deprecated",
+            "foreground": "var(wine)",
+            "background": "color(var(wine) alpha(0.1))"
+        },
+        {
+            "name": "Operators",
+            "scope": "keyword.operator",
+            "foreground": "var(moss)"
+        },
+        {
+            "name": "Punctuation",
+            "scope": "punctuation",
+            "foreground": "var(fg_muted)"
+        },
+        {
+            "name": "Tags",
+            "scope": "entity.name.tag",
+            "foreground": "var(wine)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Tag attributes",
+            "scope": "entity.other.attribute-name",
+            "foreground": "var(moss)"
+        },
+        {
+            "name": "Preprocessor",
+            "scope": "meta.preprocessor",
+            "foreground": "var(copper)"
+        },
+        {
+            "name": "Preprocessor directives",
+            "scope": "keyword.control.import, keyword.control.export",
+            "foreground": "var(copper)"
+        },
+        {
+            "name": "Diff header",
+            "scope": "meta.diff, meta.diff.header",
+            "foreground": "var(fg_muted)"
+        },
+        {
+            "name": "Diff deleted",
+            "scope": "markup.deleted",
+            "foreground": "var(wine)",
+            "background": "color(var(wine) alpha(0.1))"
+        },
+        {
+            "name": "Diff inserted",
+            "scope": "markup.inserted",
+            "foreground": "var(forest)",
+            "background": "color(var(forest) alpha(0.1))"
+        },
+        {
+            "name": "Diff changed",
+            "scope": "markup.changed",
+            "foreground": "var(amber)",
+            "background": "color(var(amber) alpha(0.1))"
+        },
+        {
+            "name": "Markdown headings",
+            "scope": "markup.heading",
+            "foreground": "var(forest)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markdown links",
+            "scope": "markup.underline.link",
+            "foreground": "var(moss)"
+        },
+        {
+            "name": "Markdown bold",
+            "scope": "markup.bold",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markdown italic",
+            "scope": "markup.italic",
+            "font_style": "italic"
+        },
+        {
+            "name": "Markdown code",
+            "scope": "markup.raw",
+            "foreground": "var(fg_bright)",
+            "background": "var(bg_secondary)"
+        },
+        {
+            "name": "Markdown quote",
+            "scope": "markup.quote",
+            "foreground": "var(fg_muted)",
+            "font_style": "italic"
+        },
+        {
+            "name": "JSON key",
+            "scope": "meta.mapping.key string.quoted",
+            "foreground": "var(moss)"
+        },
+        {
+            "name": "CSS selectors",
+            "scope": "entity.name.tag.css, entity.other.attribute-name.class.css, entity.other.attribute-name.id.css",
+            "foreground": "var(forest)"
+        },
+        {
+            "name": "CSS properties",
+            "scope": "support.type.property-name.css",
+            "foreground": "var(moss)"
+        },
+        {
+            "name": "CSS values",
+            "scope": "support.constant.property-value.css",
+            "foreground": "var(amber)"
+        },
+        {
+            "name": "CSS units",
+            "scope": "keyword.other.unit.css",
+            "foreground": "var(copper)"
+        },
+        {
+            "name": "JavaScript/TypeScript this",
+            "scope": "variable.language.this.js, variable.language.this.ts",
+            "foreground": "var(sage)"
+        },
+        {
+            "name": "JavaScript/TypeScript console",
+            "scope": "support.class.console.js",
+            "foreground": "var(ocean)"
+        },
+        {
+            "name": "Python decorators",
+            "scope": "entity.name.function.decorator.python",
+            "foreground": "var(copper)"
+        },
+        {
+            "name": "Python self",
+            "scope": "variable.language.special.self.python",
+            "foreground": "var(sage)"
+        },
+        {
+            "name": "Git Gutter deleted",
+            "scope": "markup.deleted.git_gutter",
+            "foreground": "var(wine)"
+        },
+        {
+            "name": "Git Gutter inserted",
+            "scope": "markup.inserted.git_gutter",
+            "foreground": "var(forest)"
+        },
+        {
+            "name": "Git Gutter changed",
+            "scope": "markup.changed.git_gutter",
+            "foreground": "var(amber)"
+        },
+        {
+            "name": "Git Gutter ignored",
+            "scope": "markup.ignored.git_gutter",
+            "foreground": "var(fg_muted)"
+        },
+        {
+            "name": "Git Gutter untracked",
+            "scope": "markup.untracked.git_gutter",
+            "foreground": "var(fg_muted)"
+        }
+    ]
+}

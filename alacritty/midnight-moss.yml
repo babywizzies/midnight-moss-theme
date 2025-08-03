@@ -1,0 +1,160 @@
+# Midnight Moss theme for Alacritty (YAML format)
+# Dark organic palette with mossy green-teal accents
+# 
+# For older versions of Alacritty that use YAML configuration
+# Copy to ~/.config/alacritty/alacritty.yml or merge with existing config
+
+colors:
+  # Primary colors
+  primary:
+    background: '#1c1c1c' # Deep Night
+    foreground: '#b8b8b8' # Moonlight
+    dim_foreground: '#7a7a7a' # Mist
+    bright_foreground: '#c8c8c8' # Silver
+
+  # Cursor
+  cursor:
+    text: '#1c1c1c' # Deep Night
+    cursor: '#5e8d87' # Moss
+
+  # Vi mode cursor
+  vi_mode_cursor:
+    text: '#1c1c1c' # Deep Night
+    cursor: '#826d94' # Sage
+
+  # Search colors
+  search:
+    matches:
+      foreground: '#1c1c1c' # Deep Night
+      background: '#a09262' # Amber
+    focused_match:
+      foreground: '#1c1c1c' # Deep Night
+      background: '#5e8d87' # Moss
+    footer_bar:
+      foreground: '#b8b8b8' # Moonlight
+      background: '#2e2e2e' # Charcoal
+
+  # Hints
+  hints:
+    start:
+      foreground: '#1c1c1c' # Deep Night
+      background: '#a09262' # Amber
+    end:
+      foreground: '#1c1c1c' # Deep Night
+      background: '#5e8d87' # Moss
+
+  # Line indicator (used for highlighting active line in vi mode)
+  line_indicator:
+    foreground: None
+    background: None
+
+  # Footer bar (used for search, vi mode, etc.)
+  footer_bar:
+    foreground: '#b8b8b8' # Moonlight
+    background: '#2e2e2e' # Charcoal
+
+  # Selection colors
+  selection:
+    text: '#c8c8c8' # Silver
+    background: '#5e8d87' # Moss (with transparency)
+
+  # Normal colors (0-7)
+  normal:
+    black:   '#1c1c1c' # Deep Night
+    red:     '#9b6a6c' # Wine
+    green:   '#6e8f7c' # Forest
+    yellow:  '#a09262' # Amber
+    blue:    '#5d7e97' # Ocean
+    magenta: '#826d94' # Sage
+    cyan:    '#5e8d87' # Moss
+    white:   '#b8b8b8' # Moonlight
+
+  # Bright colors (8-15)
+  bright:
+    black:   '#525252' # Ash
+    red:     '#a37174' # Bright Wine
+    green:   '#7a9e8c' # Bright Forest
+    yellow:  '#afa072' # Bright Amber
+    blue:    '#6d8ca7' # Bright Ocean
+    magenta: '#927ba4' # Bright Sage
+    cyan:    '#6e9b95' # Bright Moss
+    white:   '#c8c8c8' # Silver
+
+  # Dim colors (used when dim_foreground is enabled)
+  dim:
+    black:   '#262626' # Shadow
+    red:     '#7a5356' # Dim Wine
+    green:   '#546b60' # Dim Forest
+    yellow:  '#806e4a' # Dim Amber
+    blue:    '#475e73' # Dim Ocean
+    magenta: '#615270' # Dim Sage
+    cyan:    '#46665f' # Dim Moss
+    white:   '#7a7a7a' # Mist
+
+  # Indexed colors for extended palette
+  indexed_colors:
+    - { index: 16, color: '#9d7a5a' } # Copper
+    - { index: 17, color: '#464646' } # Stone
+    - { index: 18, color: '#262626' } # Shadow
+    - { index: 19, color: '#2e2e2e' } # Charcoal
+    - { index: 20, color: '#3a3a3a' } # Slate
+    - { index: 21, color: '#464646' } # Stone
+
+# Bell
+bell:
+  animation: EaseOutExpo
+  duration: 0
+  color: '#a09262' # Amber
+
+# Optional window settings that complement the theme
+# window:
+#   opacity: 0.95
+#   decorations: full
+#   startup_mode: Windowed
+#   title: Alacritty
+#   class:
+#     instance: Alacritty
+#     general: Alacritty
+
+# Optional font settings that pair well with Midnight Moss
+# font:
+#   normal:
+#     family: JetBrains Mono
+#     style: Regular
+#   bold:
+#     family: JetBrains Mono
+#     style: Bold
+#   italic:
+#     family: JetBrains Mono
+#     style: Italic
+#   size: 14.0
+#   offset:
+#     x: 0
+#     y: 0
+#   glyph_offset:
+#     x: 0
+#     y: 0
+
+# Optional cursor settings
+# cursor:
+#   style: Block
+#   blinking: Off
+#   blink_interval: 750
+
+# Optional scrolling settings
+# scrolling:
+#   history: 10000
+#   multiplier: 3
+
+# Mouse settings
+# mouse:
+#   hide_when_typing: false
+
+# Key bindings (optional - standard shortcuts)
+# key_bindings:
+#   - { key: V,        mods: Control|Shift, action: Paste            }
+#   - { key: C,        mods: Control|Shift, action: Copy             }
+#   - { key: Insert,   mods: Shift,         action: PasteSelection   }
+#   - { key: Key0,     mods: Control,       action: ResetFontSize    }
+#   - { key: Equals,   mods: Control,       action: IncreaseFontSize }
+#   - { key: Minus,    mods: Control,       action: DecreaseFontSize }

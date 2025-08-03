@@ -28,63 +28,141 @@ Midnight Moss is a carefully crafted dark theme that brings together the deep tr
 ## 🚀 Available For
 
 ### ✅ Currently Available
+
+#### **Code Editors & IDEs**
+- [VS Code](#vs-code) - Comprehensive editor theme with syntax highlighting
+- [Sublime Text](#sublime-text) - Modern JSON color scheme format
+- [JetBrains IDEs](#jetbrains) - IntelliJ IDEA, PyCharm, WebStorm, etc.
+- [Vim](#vim) - Classic text editor colorscheme
+- [Neovim](#neovim) - Modern Lua-based colorscheme
+
+#### **Terminal Emulators**
+- [Alacritty](#alacritty) - Modern GPU-accelerated terminal (TOML + YAML)
+- [iTerm2](#iterm2) - macOS terminal emulator
+- [Kitty](#kitty) - Cross-platform GPU terminal
+
+#### **Terminal Tools**
+- [tmux](#tmux) - Terminal multiplexer with status bar theming
+- [Zellij](#zellij) - Modern terminal multiplexer
+- [Starship](#starship) - Cross-shell prompt configuration
+- [Zsh](#zsh) - Shell theme with Oh-My-Zsh integration
+
+#### **Applications**
 - [Obsidian](#obsidian) - Note-taking and knowledge management
-- [VS Code](#vs-code) - Code editor
-- [iTerm2](#iterm2) - Terminal emulator
-- [Neovim](#neovim) - Text editor
-- [Kitty](#kitty) - Terminal emulator
-- [Starship](#starship) - Cross-shell prompt
-- [Zellij](#zellij) - Terminal multiplexer
+- [Firefox](#firefox) - Web browser interface theming
+
+#### **Package Management**
+- [Arch Linux](#arch-linux) - AUR package for easy installation
 
 ### 🔄 Coming Soon
-- Alacritty - Terminal emulator
 - Hyper - Terminal emulator
-- Sublime Text - Text editor
-- JetBrains IDEs - Development environments
-- Firefox - Web browser
-- Chrome - Web browser
+- Emacs - Text editor
+- Chrome - Web browser extension
+- Rofi - Application launcher
+- i3/Sway - Window managers
+- Dunst - Notification daemon
 
 ## 📦 Installation
 
-### Obsidian
+### Package Managers
 
-1. Download the `obsidian/` folder from this repository
-2. Copy the contents to your vault's `.obsidian/themes/midnight-moss/` directory
-3. Go to Settings → Appearance → Themes
-4. Select "Midnight Moss" from the dropdown
+#### Arch Linux (AUR)
+```bash
+# Using yay
+yay -S midnight-moss-themes
 
-### VS Code
-
-1. Download `vscode/midnight-moss-theme.json`
-2. Install manually or create a custom extension
-3. See the [VS Code README](vscode/README.md) for detailed instructions
-
-### iTerm2
-
-1. Download `iterm2/Midnight Moss.itermcolors`
-2. Double-click to import into iTerm2
-3. Go to Preferences → Profiles → Colors → Color Presets
-
-### Starship
-
-Add this to your `~/.config/starship.toml`:
-
-```toml
-# Copy the configuration from starship/starship.toml
+# Using paru  
+paru -S midnight-moss-themes
 ```
 
-### Zellij
+#### Manual Download
+Download individual themes from the [releases page](https://github.com/babywizzies/midnight-moss-theme/releases) or browse the source code.
 
-Add this to your `~/.config/zellij/config.kdl`:
+### Quick Setup
 
-```kdl
-theme "midnight-moss"
+#### **Code Editors**
 
-themes {
-    midnight-moss {
-        // Copy the theme configuration from zellij/config.kdl
-    }
-}
+**VS Code**
+```bash
+# Download and install manually, or search for "Midnight Moss" in extensions
+# See vscode/README.md for detailed instructions
+```
+
+**Sublime Text**
+```bash
+# Copy to User packages directory
+cp "sublime-text/Midnight Moss.sublime-color-scheme" ~/.config/sublime-text/Packages/User/
+# Select from Preferences → Color Scheme
+```
+
+**JetBrains IDEs**
+```bash
+# Import color scheme file
+# Settings → Editor → Color Scheme → Import → Midnight_Moss.icls
+```
+
+**Vim/Neovim**
+```bash
+mkdir -p ~/.vim/colors
+curl -o ~/.vim/colors/midnight-moss.vim https://raw.githubusercontent.com/babywizzies/midnight-moss-theme/main/vim/midnight-moss.vim
+# Add to .vimrc: colorscheme midnight-moss
+```
+
+#### **Terminal Emulators**
+
+**Alacritty**
+```bash
+mkdir -p ~/.config/alacritty/themes
+curl -o ~/.config/alacritty/themes/midnight-moss.toml https://raw.githubusercontent.com/babywizzies/midnight-moss-theme/main/alacritty/midnight-moss.toml
+# Add to alacritty.toml: import = ["~/.config/alacritty/themes/midnight-moss.toml"]
+```
+
+**iTerm2**
+```bash
+curl -o ~/Downloads/midnight-moss.itermcolors https://raw.githubusercontent.com/babywizzies/midnight-moss-theme/main/iterm2/Midnight%20Moss.itermcolors
+# Double-click to import, then select in Preferences → Profiles → Colors
+```
+
+**Kitty**
+```bash
+curl -o ~/.config/kitty/midnight-moss.conf https://raw.githubusercontent.com/babywizzies/midnight-moss-theme/main/kitty/midnight-moss.conf
+echo "include midnight-moss.conf" >> ~/.config/kitty/kitty.conf
+```
+
+#### **Terminal Tools**
+
+**tmux**
+```bash
+curl -o ~/.config/tmux/midnight-moss.conf https://raw.githubusercontent.com/babywizzies/midnight-moss-theme/main/tmux/midnight-moss.conf
+echo "source-file ~/.config/tmux/midnight-moss.conf" >> ~/.tmux.conf
+```
+
+**Zsh (Oh-My-Zsh)**
+```bash
+curl -o ~/.oh-my-zsh/themes/midnight-moss.zsh-theme https://raw.githubusercontent.com/babywizzies/midnight-moss-theme/main/zsh/midnight-moss.zsh-theme
+# Set ZSH_THEME="midnight-moss" in ~/.zshrc
+```
+
+**Starship**
+```bash
+curl -o ~/.config/starship-midnight-moss.toml https://raw.githubusercontent.com/babywizzies/midnight-moss-theme/main/starship/starship.toml
+# Add configuration to your starship.toml
+```
+
+#### **Applications**
+
+**Obsidian**
+```bash
+# Copy to your vault's themes directory
+# .obsidian/themes/midnight-moss/
+# Enable in Settings → Appearance → Themes
+```
+
+**Firefox**
+```bash
+# Enable custom stylesheets in about:config
+# Copy userChrome.css and userContent.css to profile chrome folder
+# See firefox/README.md for detailed instructions
 ```
 
 ## 🖼️ Previews
