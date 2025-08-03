@@ -1,0 +1,77 @@
+# Starship Configuration - Muted Background + Cool Accents
+
+format = """
+[▓▒░](#262626)\
+[  ](bg:#262626 fg:#5e8d87)\
+[](bg:#2e2e2e fg:#262626)\
+$directory\
+[](fg:#2e2e2e bg:#3a3a3a)\
+$git_branch\
+$git_status\
+[](fg:#3a3a3a bg:#464646)\
+$nodejs\
+$rust\
+$golang\
+$php\
+$python\
+[](fg:#464646 bg:#525252)\
+$time\
+[ ](fg:#525252)\
+\n$character"""
+
+[directory]
+style = "fg:#c8c8c8 bg:#2e2e2e"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"projects" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#3a3a3a"
+format = '[[ $symbol $branch ](fg:#6e8f7c bg:#3a3a3a)]($style)'
+
+[git_status]
+style = "bg:#3a3a3a"
+format = '[[($all_status$ahead_behind )](fg:#5e8d87 bg:#3a3a3a)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#464646"
+format = '[[ $symbol ($version) ](fg:#5d7e97 bg:#464646)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#464646"
+format = '[[ $symbol ($version) ](fg:#9b6a6c bg:#464646)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#464646"
+format = '[[ $symbol ($version) ](fg:#5e8d87 bg:#464646)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#464646"
+format = '[[ $symbol ($version) ](fg:#826d94 bg:#464646)]($style)'
+
+[python]
+symbol = ""
+style = "bg:#464646"
+format = '[[ $symbol ($version) ](fg:#a09262 bg:#464646)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:#525252"
+format = '[[  $time ](fg:#7a7a7a bg:#525252)]($style)'
+
+[character]
+success_symbol = '[▸](bold fg:#6e8f7c)'
+error_symbol = '[▸](bold fg:#9b6a6c)'

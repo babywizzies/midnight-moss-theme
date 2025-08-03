@@ -1,0 +1,60 @@
+// Zellij Configuration with Gruvbox Theme
+
+theme "cool-muted"
+
+themes {
+    cool-muted {
+        fg "#b8b8b8"
+        bg "#1c1c1c"
+        black "#1c1c1c"
+        red "#9b6a6c"
+        green "#6e8f7c"
+        yellow "#a09262"
+        blue "#5d7e97"
+        magenta "#826d94"
+        cyan "#5e8d87"
+        white "#a8a8a8"
+        orange "#9d7a5a"
+    }
+}
+
+// Keybindings more like tmux
+keybinds {
+    normal {
+        bind "Ctrl a" { SwitchToMode "tmux"; }
+    }
+    tmux {
+        bind "Ctrl a" { SwitchToMode "Normal"; }
+        bind "Esc" { SwitchToMode "Normal"; }
+        bind "g" { SwitchToMode "Normal"; }
+        bind "[" { SwitchToMode "Scroll"; }
+        bind "-" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "|" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+        bind "c" { NewTab; SwitchToMode "Normal"; }
+        bind "," { SwitchToMode "RenameTab"; }
+        bind "p" { GoToPreviousTab; SwitchToMode "Normal"; }
+        bind "n" { GoToNextTab; SwitchToMode "Normal"; }
+        bind "h" { MoveFocus "Left"; SwitchToMode "Normal"; }
+        bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
+        bind "j" { MoveFocus "Down"; SwitchToMode "Normal"; }
+        bind "k" { MoveFocus "Up"; SwitchToMode "Normal"; }
+        bind "d" { Detach; }
+        bind "Space" { NextSwapLayout; }
+        bind "x" { CloseFocus; SwitchToMode "Normal"; }
+    }
+}
+
+// UI Configuration
+simplified_ui true
+pane_frames false
+default_layout "compact"
+
+// Mouse support
+mouse_mode true
+
+// Copy to system clipboard
+copy_command "pbcopy"
+
+// Scrollback
+scrollback_lines_to_serialize 10000
